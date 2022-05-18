@@ -1,0 +1,2 @@
+rpaframework==13.0.1
+requests~=2.27.1
