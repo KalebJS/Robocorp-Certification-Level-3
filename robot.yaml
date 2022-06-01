@@ -1,6 +1,9 @@
 tasks:
-  Run Python:
-    shell: python task.py
+  Produce Traffic Data Work Items:
+    shell: python producer_entrypoint.py
+
+  Consume Traffic Data Work Items:
+    shell: python consumer_entrypoint.py
 
 condaConfigFile: conda.yaml
 artifactsDir: output
