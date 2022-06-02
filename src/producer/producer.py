@@ -10,3 +10,4 @@ class ProducerProcess:
     def run(self):
         raw_data = self.http.download_traffic_data()
         self.traffic_data.load_traffic_data_as_table(raw_data)
+        self.traffic_data.filter_and_sort_traffic_data()

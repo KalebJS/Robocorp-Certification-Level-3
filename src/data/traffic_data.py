@@ -17,4 +17,15 @@ class TrafficData:
 
         values = data["value"]
         items = [TrafficDataItem(**item) for item in values]
-        self.data = pd.DataFrame(items)
+        self.data = pd.DataFrame([dict(item) for item in items])
+
+    def filter_and_sort_traffic_data(self) -> None:
+        print("Filtering and sorting traffic data...")
+
+        both_gender_value = "BTSX"
+        self.data = self.data[self.data["genders"] == both_gender_value]
+
+        max_rate = 5.0
+        self.data = self.data[self.data["rate"] < max_rate]
+
+        self.data = self.data.sort_values(by=["year"], ascending=False)
