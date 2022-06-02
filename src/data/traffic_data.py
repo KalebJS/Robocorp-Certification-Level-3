@@ -41,7 +41,7 @@ class TrafficData:
         print("Creating work item payloads...")
 
         payloads = []
-        for row in self.data.itertuples():
+        for _, row in self.data.iterrows():
             payload = {
                 "country": row["country"],
                 "year": row["year"],

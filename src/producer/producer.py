@@ -17,3 +17,4 @@ class ProducerProcess:
         self.traffic_data.filter_latest_data_by_country()
 
         payloads = self.traffic_data.create_work_item_payloads()
+        self.workitems.save_work_item_payloads(payloads)
