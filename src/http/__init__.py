@@ -1,1 +1,1 @@
-from .http import Http
+from .http_proxy import HTTPProxy

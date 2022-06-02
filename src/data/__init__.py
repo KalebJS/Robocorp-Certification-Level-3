@@ -1,1 +1,1 @@
-from .traffic_data import TrafficData
+from .traffic_data_handler import TrafficDataHandler

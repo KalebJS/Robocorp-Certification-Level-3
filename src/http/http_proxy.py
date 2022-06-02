@@ -4,7 +4,7 @@ from RPA.HTTP import HTTP
 from config import Config
 
 
-class Http:
+class HTTPProxy:
     http: HTTP = HTTP()
 
     def download_traffic_data(self) -> Path:

@@ -9,7 +9,7 @@ from config import Config
 from .models import TrafficDataItem
 
 
-class TrafficData:
+class TrafficDataHandler:
     def __init__(self) -> None:
         self.data: pd.DataFrame = None
 

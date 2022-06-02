@@ -1,12 +1,12 @@
-from src.data import TrafficData
-from src.http import Http
+from src.data import TrafficDataHandler
+from src.http import HTTPProxy
 from src.work_items import WorkItemsHandler
 
 
 class ProducerProcess:
     def __init__(self) -> None:
-        self.http = Http()
-        self.traffic_data = TrafficData()
+        self.http = HTTPProxy()
+        self.traffic_data = TrafficDataHandler()
         self.workitems = WorkItemsHandler()
 
     def run(self):

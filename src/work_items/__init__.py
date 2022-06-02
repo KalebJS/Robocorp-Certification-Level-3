@@ -1,1 +1,1 @@
-from .work_items import WorkItemsHandler
+from .work_items_handler import WorkItemsHandler
