@@ -1,5 +1,5 @@
-from typing import Generator, List
-from RPA.Robocorp.WorkItems import WorkItems, EmptyQueue, WorkItem
+from typing import Generator, List, Union
+from RPA.Robocorp.WorkItems import WorkItems, EmptyQueue, WorkItem, State, Error
 
 
 class WorkItemsHandler:
@@ -19,6 +19,11 @@ class WorkItemsHandler:
                 yield self.workitems.get_input_work_item()
             except EmptyQueue:
                 break
+
+    def release_failed_work_item(
+        self, exception_type: Union[Error, None] = Error.APPLICATION, code: str = "", msg: str = ""
+    ) -> None:
+        self.workitems.release_input_work_item(State.FAILED, exception_type=exception_type, code=code, message=msg)
 
     def get_work_item_payload(self, work_item: WorkItem) -> dict:
         return work_item.payload

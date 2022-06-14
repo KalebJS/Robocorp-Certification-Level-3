@@ -1,0 +1,2 @@
+class BadPayloadError(Exception):
+    pass

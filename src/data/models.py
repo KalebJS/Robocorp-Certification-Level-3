@@ -1,5 +1,5 @@
 from typing import Any
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, validator
 
 
 class TrafficDataItem(BaseModel):
@@ -11,4 +11,13 @@ class TrafficDataItem(BaseModel):
     def __init__(__pydantic_self__, **data: Any) -> None:
         super().__init__(**data)
 
-        # __pydantic_self__year
+
+class WorkItem(BaseModel):
+    country: str
+    year: int
+    rate: float
+
+    @validator("country")
+    def three_characters(cls, v):
+        if len(v) != 3:
+            raise ValueError("Country should be only 3 characters")
